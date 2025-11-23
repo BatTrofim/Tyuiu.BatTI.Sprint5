@@ -7,7 +7,7 @@ namespace Tyuiu.BatTI.Sprint5.Task3.V3.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask3.txt";
+            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask3.bin";
 
             double y = (x * Math.Sqrt(x + 3));
 
