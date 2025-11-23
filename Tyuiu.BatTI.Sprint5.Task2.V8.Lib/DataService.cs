@@ -6,7 +6,7 @@ namespace Tyuiu.BatTI.Sprint5.Task2.V8.Lib
     {
         public string SaveToFileTextData(int[,] matrix)
         {
-            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask2.csv";
+            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask2.txt";
             string buffer = "";
 
             for (int i = 0; i < matrix.GetLength(0); i++)
