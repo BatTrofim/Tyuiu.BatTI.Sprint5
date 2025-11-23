@@ -10,7 +10,7 @@ namespace Tyuiu.BatTI.Sprint5.Task3.V3.Test
         [TestMethod]
         public void TestMethod1()
         {
-            string path = @"C:\Users\Lenovo\source\repos\Tyuiu.BatTI.Sprint5\Tyuiu.BatTI.Sprint5.Task3.V3\bin\Debug\OutPutFileTask3.txt";
+            string path = @"C:\Users\Lenovo\source\repos\Tyuiu.BatTI.Sprint5\Tyuiu.BatTI.Sprint5.Task3.V3\bin\Debug";
 
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
