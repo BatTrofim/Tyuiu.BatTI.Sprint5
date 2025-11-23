@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Text;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.BatTI.Sprint5.Task2.V8.Lib
 {
@@ -6,33 +7,27 @@ namespace Tyuiu.BatTI.Sprint5.Task2.V8.Lib
     {
         public string SaveToFileTextData(int[,] matrix)
         {
-            string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask2.txt";
-            string buffer = "";
+            int rows = matrix.GetLength(0);
+            int cols = matrix.GetLength(1);
+            StringBuilder csvContent = new StringBuilder();
 
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int count = 0, j = 0; j < matrix.GetLength(1); j++, count++)
+                for (int j = 0; j < cols; j++)
                 {
-                    if (matrix[i, j] < 0)
-                    {
-                        matrix[i, j] = 0;
-                    }
-                    else if (matrix[i, j] > 0)
-                    {
-                        matrix[i, j] = 1;
-                    }
-                    if (count != 2)
-                    {
-                        buffer += matrix[i, j].ToString() + "\t";
-                    }
-                    else
-                    {
-                        buffer += matrix[i, j].ToString() + "\n";
-                    }
+
+                    int value = matrix[i, j] > 0 ? 1 : 0;
+                    csvContent.Append(value);
+
+                    if (j < cols - 1)
+                        csvContent.Append(";");
                 }
-                File.WriteAllText(path, buffer);
+                csvContent.AppendLine();
             }
-            return path;
+            string filePath = Path.Combine(Path.GetTempPath(), "OutPutFileTask2.csv");
+            File.WriteAllText(filePath, csvContent.ToString());
+
+            return filePath;
         }
     }
 }
