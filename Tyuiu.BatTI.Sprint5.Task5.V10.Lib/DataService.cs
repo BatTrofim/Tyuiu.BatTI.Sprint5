@@ -19,6 +19,7 @@ namespace Tyuiu.BatTI.Sprint5.Task5.V10.Lib
                         if (x % 2 == 0)
                         {
                             res += x;
+
                         }
                     }
                 }
