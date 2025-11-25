@@ -19,16 +19,16 @@ namespace Tyuiu.BatTI.Sprint5.Task7.V9.Lib
                 File.Delete(pathSave);
             }
             string fileContent = File.ReadAllText(path);
-            foreach(char c in fileContent)
+            foreach (char c in fileContent)
             {
                 if ((char.IsUpper(c) == true) && ((c >= 'A') & (c <= 'Z')))
                 {
-                    fileContent = fileContent.Replace(c, ' ');
+                    fileContent = fileContent.Replace(Convert.ToString(c), "");
                 }
             }
             string modifiedContent = fileContent;
             File.WriteAllText(pathSave, modifiedContent);
-            return modifiedContent;
+            return modifiedContent;    
         }
     }
 }
