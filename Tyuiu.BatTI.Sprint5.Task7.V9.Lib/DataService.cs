@@ -21,7 +21,7 @@ namespace Tyuiu.BatTI.Sprint5.Task7.V9.Lib
             string fileContent = File.ReadAllText(path);
             foreach(char c in fileContent)
             {
-                if ((char.IsUpper(c) == true) && ((c < 'a') & (c > 'z')))
+                if ((char.IsUpper(c) == true) && ((c >= 'A') & (c <= 'Z')))
                 {
                     fileContent = fileContent.Replace(c, ' ');
                 }
