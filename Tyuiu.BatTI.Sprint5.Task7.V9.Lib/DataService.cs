@@ -8,17 +8,27 @@ namespace Tyuiu.BatTI.Sprint5.Task7.V9.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            path = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V9.txt");
-            string text = File.ReadAllText(path);
-            foreach (char c in text)
+            string pathSave = Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V18.txt" });
+
+
+            FileInfo fileInfo = new FileInfo(pathSave);
+            bool fileExists = fileInfo.Exists;
+
+            if (fileExists)
             {
-                if (char.IsUpper(c) == true)
-                {
-                    text = text.Replace(c, ' ');   
-                }                
+                File.Delete(pathSave);
             }
-            File.AppendAllText(text, path);
-            return text;
+            string fileContent = File.ReadAllText(path);
+            foreach(char c in fileContent)
+            {
+                if(char.IsUpper(c) == true)
+                {
+                    fileContent = fileContent.Replace(c, ' ');
+                }
+            }
+            string modifiedContent = fileContent;
+            File.WriteAllText(pathSave, modifiedContent);
+            return modifiedContent;
         }
     }
 }
