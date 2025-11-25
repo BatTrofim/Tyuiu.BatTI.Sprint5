@@ -8,8 +8,7 @@ namespace Tyuiu.BatTI.Sprint5.Task7.V9.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            path = Path.Combine(Path.GetTempPath(), "InPutDataFileTask7V9.txt");
-            string savePath = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V9.txt");
+            path = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V9.txt");
             string text = File.ReadAllText(path);
             foreach (char c in text)
             {
@@ -18,7 +17,7 @@ namespace Tyuiu.BatTI.Sprint5.Task7.V9.Lib
                     text = text.Replace(c, ' ');   
                 }                
             }
-            File.AppendAllText(text, savePath);
+            File.AppendAllText(text, path);
             return text;
         }
     }
