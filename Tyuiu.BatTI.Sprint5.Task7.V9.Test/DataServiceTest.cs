@@ -9,7 +9,7 @@ namespace Tyuiu.BatTI.Sprint5.Task7.V9.Test
         [TestMethod]
         public void TestMethod1()
         {
-            string path = @"C:\DataSprint5\InPutDataFileTask7V9.txt";
+            string path = @"C:\Users\Lenovo\source\repos\Tyuiu.BatTI.Sprint5\Tyuiu.BatTI.Sprint5.Task7.V9\bin\Debug\OutPutDataFileTask7V9.txt";
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
             bool wait = true;
